@@ -21,8 +21,8 @@ export default defineConfig({
     build: {
     lib: {
       entry: path.resolve(dirname, "src/index.tsx"),
-      name: "MyComponentLib",
-      fileName: (format) => `my-component-lib.${format}.js`,
+      name: "henryasComponentUiReact",
+      fileName: (format) => `index.${format === 'es' ? 'mjs' : 'js'}`,
     },
     rollupOptions: {
      external: ["react", "react-dom", "react/jsx-runtime"],
