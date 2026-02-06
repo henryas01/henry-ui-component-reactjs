@@ -201,7 +201,7 @@ export const Select = <T extends string | string[]>({
           className={`
             flex items-center justify-between gap-2 px-3 py-2 border rounded transition-all
             ${outlined ? "bg-gray-50 border-gray-300" : "bg-white border-slate-200 shadow-sm"}
-            ${isOpen ? "border-gray-300 ring-2 ring-teal-50" : "hover:border-slate-300"}
+            ${isOpen ? "border-gray-300 ring-2 ring-gray-50" : "hover:border-slate-300"}
           `}
         >
           <div className="flex flex-wrap gap-2 items-center flex-1 overflow-hidden">

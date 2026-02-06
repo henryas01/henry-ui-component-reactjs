@@ -129,7 +129,7 @@ function I(e, n) {
   }
   return r;
 }
-function x(e) {
+function y(e) {
   for (var n = 1; n < arguments.length; n++) {
     var r = arguments[n] != null ? arguments[n] : {};
     n % 2 ? I(Object(r), !0).forEach(function(t) {
@@ -158,13 +158,13 @@ function te(e, n) {
   return (n === "string" ? String : Number)(e);
 }
 function W(e) {
-  return e && e.map((n, r) => /* @__PURE__ */ u.createElement(n.tag, x({
+  return e && e.map((n, r) => /* @__PURE__ */ u.createElement(n.tag, y({
     key: r
   }, n.attr), W(n.child)));
 }
-function y(e) {
+function x(e) {
   return (n) => /* @__PURE__ */ u.createElement(re, v({
-    attr: x({}, e.attr)
+    attr: y({}, e.attr)
   }, n), W(e.child));
 }
 function re(e) {
@@ -173,34 +173,34 @@ function re(e) {
       attr: t,
       size: a,
       title: c
-    } = e, O = J(e, Z), w = a || r.size || "1em", d;
+    } = e, O = J(e, Z), b = a || r.size || "1em", d;
     return r.className && (d = r.className), e.className && (d = (d ? d + " " : "") + e.className), /* @__PURE__ */ u.createElement("svg", v({
       stroke: "currentColor",
       fill: "currentColor",
       strokeWidth: "0"
     }, r.attr, t, O, {
       className: d,
-      style: x(x({
+      style: y(y({
         color: e.color || r.color
       }, r.style), e.style),
-      height: w,
-      width: w,
+      height: b,
+      width: b,
       xmlns: "http://www.w3.org/2000/svg"
     }), c && /* @__PURE__ */ u.createElement("title", null, c), e.children);
   };
   return F !== void 0 ? /* @__PURE__ */ u.createElement(F.Consumer, null, (r) => n(r)) : n(R);
 }
 function ne(e) {
-  return y({ attr: { fill: "none", viewBox: "0 0 24 24", strokeWidth: "1.5", stroke: "currentColor", "aria-hidden": "true" }, child: [{ tag: "path", attr: { strokeLinecap: "round", strokeLinejoin: "round", d: "m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" }, child: [] }] })(e);
+  return x({ attr: { fill: "none", viewBox: "0 0 24 24", strokeWidth: "1.5", stroke: "currentColor", "aria-hidden": "true" }, child: [{ tag: "path", attr: { strokeLinecap: "round", strokeLinejoin: "round", d: "m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" }, child: [] }] })(e);
 }
 function oe(e) {
-  return y({ attr: { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, child: [{ tag: "path", attr: { d: "m6 9 6 6 6-6" }, child: [] }] })(e);
+  return x({ attr: { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, child: [{ tag: "path", attr: { d: "m6 9 6 6 6-6" }, child: [] }] })(e);
 }
 function ie(e) {
-  return y({ attr: { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, child: [{ tag: "circle", attr: { cx: "11", cy: "11", r: "8" }, child: [] }, { tag: "path", attr: { d: "m21 21-4.3-4.3" }, child: [] }] })(e);
+  return x({ attr: { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, child: [{ tag: "circle", attr: { cx: "11", cy: "11", r: "8" }, child: [] }, { tag: "path", attr: { d: "m21 21-4.3-4.3" }, child: [] }] })(e);
 }
 function le(e) {
-  return y({ attr: { viewBox: "0 0 512 512" }, child: [{ tag: "path", attr: { d: "M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm86.63 272L320 342.63l-64-64-64 64L169.37 320l64-64-64-64L192 169.37l64 64 64-64L342.63 192l-64 64z" }, child: [] }] })(e);
+  return x({ attr: { viewBox: "0 0 512 512" }, child: [{ tag: "path", attr: { d: "M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm86.63 272L320 342.63l-64-64-64 64L169.37 320l64-64-64-64L192 169.37l64 64 64-64L342.63 192l-64 64z" }, child: [] }] })(e);
 }
 const ue = ({
   id: e,
@@ -210,7 +210,7 @@ const ue = ({
   onChange: a,
   multiple: c = !1,
   withSearch: O = !0,
-  searchwithfilter: w = !1,
+  searchwithfilter: b = !1,
   usePortal: d = !0,
   outlined: $ = !1,
   placeholder: V = "",
@@ -221,9 +221,9 @@ const ue = ({
     top: 0,
     left: 0,
     width: 0
-  }), g = D(null), E = D(null), H = M(() => Array.isArray(t) ? t.join(",") : t || "", [t]), p = () => {
-    if (g.current) {
-      const o = g.current.getBoundingClientRect();
+  }), w = D(null), E = D(null), H = M(() => Array.isArray(t) ? t.join(",") : t || "", [t]), p = () => {
+    if (w.current) {
+      const o = w.current.getBoundingClientRect();
       T({
         top: o.bottom + window.scrollY + 4,
         left: o.left + window.scrollX,
@@ -236,13 +236,13 @@ const ue = ({
   }), [m]), _(() => {
     const o = (l) => {
       const f = l.target;
-      !g.current?.contains(f) && !E.current?.contains(f) && N(!1);
+      !w.current?.contains(f) && !E.current?.contains(f) && N(!1);
     };
     return document.addEventListener("mousedown", o), () => document.removeEventListener("mousedown", o);
   }, []);
   const S = (o) => {
     if (c) {
-      const l = Array.isArray(t) ? t : [], f = l.includes(o) ? l.filter((b) => b !== o) : [...l, o];
+      const l = Array.isArray(t) ? t : [], f = l.includes(o) ? l.filter((g) => g !== o) : [...l, o];
       a(f);
     } else
       a(o), N(!1);
@@ -252,7 +252,7 @@ const ue = ({
     if (!l) return o;
     const f = o.split(new RegExp(`(${l})`, "gi"));
     return /* @__PURE__ */ i("span", { children: f.map(
-      (b, K) => b.toLowerCase() === l.toLowerCase() ? /* @__PURE__ */ i("span", { className: "bg-teal-500 text-white px-0.5 rounded-sm", children: b }, K) : b
+      (g, K) => g.toLowerCase() === l.toLowerCase() ? /* @__PURE__ */ i("span", { className: "bg-teal-500 text-white px-0.5 rounded-sm", children: g }, K) : g
     ) });
   }, A = /* @__PURE__ */ s(
     "div",
@@ -289,7 +289,7 @@ const ue = ({
           )
         ] }),
         /* @__PURE__ */ i("div", { className: "max-h-60 overflow-y-auto", children: /* @__PURE__ */ i("div", { className: "max-h-60 overflow-y-auto", children: (() => {
-          const o = w ? X : r;
+          const o = b ? X : r;
           return o.length > 0 ? o.map((l) => /* @__PURE__ */ i(
             "div",
             {
@@ -307,7 +307,7 @@ const ue = ({
     "div",
     {
       className: "flex flex-col md:flex-row items-start gap-4 md:gap-10 w-full p-4 font-sans",
-      ref: g,
+      ref: w,
       children: [
         /* @__PURE__ */ i("input", { type: "hidden", name: n, value: H }),
         P && /* @__PURE__ */ i("label", { className: "text-sm text-slate-600 font-semibold w-24 mt-2 shrink-0 select-none", children: P }),
@@ -318,21 +318,21 @@ const ue = ({
               onClick: () => N(!m),
               className: `
             flex items-center justify-between gap-2 px-3 py-2 border rounded transition-all
-            ${$ ? "bg-slate-50 border-slate-300" : "bg-white border-slate-200 shadow-sm"}
-            ${m ? "border-teal-500 ring-2 ring-teal-50" : "hover:border-slate-300"}
+            ${$ ? "bg-gray-50 border-gray-300" : "bg-white border-slate-200 shadow-sm"}
+            ${m ? "border-gray-300 ring-2 ring-gray-50" : "hover:border-slate-300"}
           `,
               children: [
                 /* @__PURE__ */ i("div", { className: "flex flex-wrap gap-2 items-center flex-1 overflow-hidden", children: !t || Array.isArray(t) && t.length === 0 ? /* @__PURE__ */ i("span", { className: "text-slate-400 text-sm", children: V }) : c && Array.isArray(t) ? r.filter((o) => t.includes(o.value)).map((o) => /* @__PURE__ */ s(
                   "div",
                   {
-                    className: "bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full flex items-center gap-1.5 transition-colors hover:bg-slate-200",
+                    className: "bg-gray-100 border border-slate-200 px-2 py-0.5 rounded-full flex items-center gap-1.5 transition-colors hover:bg-slate-200",
                     children: [
                       /* @__PURE__ */ i("span", { className: "text-slate-700 text-xs font-medium", children: o.label }),
                       /* @__PURE__ */ i(
                         ne,
                         {
-                          className: "text-slate-400 hover:text-red-500 cursor-pointer",
-                          size: 18,
+                          className: "text-gray-500 hover:text-gray-700 cursor-pointer",
+                          size: 20,
                           onClick: (l) => {
                             l.stopPropagation(), S(o.value);
                           }
