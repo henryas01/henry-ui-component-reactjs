@@ -3,8 +3,8 @@ import "react";
 const r = ({
   primary: o = !1,
   size: t = "medium",
-  backgroundColor: n,
-  label: i,
+  backgroundColor: i,
+  label: n,
   ...a
 }) => {
   const d = o ? "storybook-button--primary " : "storybook-button--secondary";
@@ -15,16 +15,16 @@ const r = ({
       className: ["storybook-button ", `storybook-button--${t}`, d].join(
         " "
       ),
-      style: { backgroundColor: n },
+      style: { backgroundColor: i },
       ...a,
-      children: /* @__PURE__ */ l("span", { className: "text-red-500", children: i })
+      children: n
     }
   );
 }, m = ({
   user: o,
   onLogin: t,
-  onLogout: n,
-  onCreateAccount: i
+  onLogout: i,
+  onCreateAccount: n
 }) => /* @__PURE__ */ l("header", { children: /* @__PURE__ */ e("div", { className: "storybook-header", children: [
   /* @__PURE__ */ e("div", { children: [
     /* @__PURE__ */ l(
@@ -67,7 +67,7 @@ const r = ({
       /* @__PURE__ */ l("b", { children: o.name }),
       "!"
     ] }),
-    /* @__PURE__ */ l(r, { size: "small", onClick: n, label: "Log out" })
+    /* @__PURE__ */ l(r, { size: "small", onClick: i, label: "Log out" })
   ] }) : /* @__PURE__ */ e(s, { children: [
     /* @__PURE__ */ l(r, { size: "small", onClick: t, label: "Log in" }),
     /* @__PURE__ */ l(
@@ -75,7 +75,7 @@ const r = ({
       {
         primary: !0,
         size: "small",
-        onClick: i,
+        onClick: n,
         label: "Sign up"
       }
     )
