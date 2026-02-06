@@ -1,18 +1,6 @@
 "use client";
 import "./button.css";
-
-export interface ButtonProps {
-  /** Is this the principal call to action on the page? */
-  primary?: boolean;
-  /** What background color to use */
-  backgroundColor?: string;
-  /** How large should the button be? */
-  size?: "small" | "medium" | "large";
-  /** Button contents */
-  label: string;
-  /** Optional click handler */
-  onClick?: () => void;
-}
+import type { ButtonProps } from "./types";
 
 /** Primary UI component for user interaction */
 export const Button = ({
@@ -20,6 +8,8 @@ export const Button = ({
   size = "medium",
   backgroundColor,
   label,
+  className,
+  type = "button",
   ...props
 }: ButtonProps) => {
   const mode = primary
@@ -27,10 +17,15 @@ export const Button = ({
     : "storybook-button--secondary";
   return (
     <button
-      type="button"
-      className={["storybook-button ", `storybook-button--${size}`, mode].join(
-        " ",
-      )}
+      type={type}
+      className={[
+        className,
+        "storybook-button ",
+        `storybook-button--${size}`,
+        mode,
+      ]
+        .filter(Boolean)
+        .join(" ")}
       style={{ backgroundColor }}
       {...props}
     >
