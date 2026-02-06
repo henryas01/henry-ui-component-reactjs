@@ -1,9 +1,14 @@
 {
-  "name": "intro-storybook-react-template",
+  "name": "my-component-lib",
   "version": "0.2.0",
   "description": "Starter template to get up and running quickly with React and Storybook",
   "author": "Chromatic <https://chromatic.com/>",
   "type": "module",
+  "main": "dist/my-component-lib.es.js",
+  "module": "dist/my-component-lib.es.js",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/chromaui/intro-storybook-react-template"
@@ -12,10 +17,9 @@
     "url": "https://github.com/chromaui/intro-storybook-react-template/issues"
   },
   "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
   },
   "scripts": {
     "dev": "vite",
@@ -46,7 +50,10 @@
     "msw": "^2.12.7",
     "msw-storybook-addon": "^2.0.6",
     "playwright": "^1.57.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "storybook": "^10.2.6",
+    "tailwindcss": "^4.1.18",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4",
@@ -60,5 +67,8 @@
       "plugin:storybook/recommended"
     ]
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.12.0",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.18"
+  }
 }
