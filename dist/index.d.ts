@@ -3,7 +3,7 @@ import { JSX } from 'react/jsx-runtime';
 /** Primary UI component for user interaction */
 export declare const Button: ({ primary, size, backgroundColor, label, className, type, ...props }: ButtonProps) => JSX.Element;
 
-declare interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export declare interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     primary?: boolean;
     backgroundColor?: string;
     size?: "small" | "medium" | "large";
