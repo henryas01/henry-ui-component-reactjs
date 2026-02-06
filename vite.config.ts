@@ -7,6 +7,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import { playwright } from "@vitest/browser-playwright";
+
+import tailwindcss from '@tailwindcss/vite'
+
 const dirname =
   typeof __dirname !== "undefined"
     ? __dirname
@@ -14,7 +17,23 @@ const dirname =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(),tailwindcss()],
+    build: {
+    lib: {
+      entry: path.resolve(dirname, "src/index.tsx"),
+      name: "MyComponentLib",
+      fileName: (format) => `my-component-lib.${format}.js`,
+    },
+    rollupOptions: {
+     external: ["react", "react-dom", "react/jsx-runtime"],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+        },
+      },
+    },
+  },
   test: {
     projects: [
       {
