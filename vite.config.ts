@@ -7,6 +7,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import { playwright } from "@vitest/browser-playwright";
+import dts from 'vite-plugin-dts';
 
 import tailwindcss from '@tailwindcss/vite'
 
@@ -17,7 +18,19 @@ const dirname =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react(),tailwindcss()],
+  plugins: [react(), tailwindcss(),
+    dts({
+      insertTypesEntry: true,
+      rollupTypes: true,
+      tsconfigPath: "./tsconfig.app.json",
+      include: ["src/**/*.ts", "src/**/*.tsx"],
+      root: '.',
+      staticImport: true,
+      cleanVueFileName: false,
+      afterBuild: () => {
+      console.log("Types generation finished!");
+    }
+    })],
     build: {
     lib: {
       entry: path.resolve(dirname, "src/index.tsx"),
@@ -30,6 +43,13 @@ export default defineConfig({
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          "react/jsx-runtime": "jsxRuntime",
+        },
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+            return 'style.css';
+          }
+          return assetInfo.name || 'assets/[name]-[hash][extname]';
         },
       },
     },

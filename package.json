@@ -1,6 +1,6 @@
 {
   "name": "henryas-component-ui-react",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Starter template to get up and running quickly with React and Storybook",
   "author": "henryas",
   "type": "module",
@@ -11,6 +11,14 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/chromaui/intro-storybook-react-template"
@@ -59,6 +67,7 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4",
+    "vite-plugin-dts": "^4.5.4",
     "vitest": "^4.0.16"
   },
   "resolutions": {
