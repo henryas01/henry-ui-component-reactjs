@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { HiOutlineXCircle } from "react-icons/hi2";
 import { LuSearch, LuChevronDown } from "react-icons/lu";
@@ -200,8 +200,8 @@ export const Select = <T extends string | string[]>({
           onClick={() => setIsOpen(!isOpen)}
           className={`
             flex items-center justify-between gap-2 px-3 py-2 border rounded transition-all
-            ${outlined ? "bg-slate-50 border-slate-300" : "bg-white border-slate-200 shadow-sm"}
-            ${isOpen ? "border-teal-500 ring-2 ring-teal-50" : "hover:border-slate-300"}
+            ${outlined ? "bg-gray-50 border-gray-300" : "bg-white border-slate-200 shadow-sm"}
+            ${isOpen ? "border-gray-300 ring-2 ring-teal-50" : "hover:border-slate-300"}
           `}
         >
           <div className="flex flex-wrap gap-2 items-center flex-1 overflow-hidden">
@@ -213,14 +213,14 @@ export const Select = <T extends string | string[]>({
                 .map((opt) => (
                   <div
                     key={opt.value}
-                    className="bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full flex items-center gap-1.5 transition-colors hover:bg-slate-200"
+                    className="bg-gray-100 border border-slate-200 px-2 py-0.5 rounded-full flex items-center gap-1.5 transition-colors hover:bg-slate-200"
                   >
                     <span className="text-slate-700 text-xs font-medium">
                       {opt.label}
                     </span>
                     <HiOutlineXCircle
-                      className="text-slate-400 hover:text-red-500 cursor-pointer"
-                      size={18}
+                      className="text-gray-500 hover:text-gray-700 cursor-pointer"
+                      size={20}
                       onClick={(e) => {
                         e.stopPropagation();
                         handleToggleOption(opt.value);
